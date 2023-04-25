@@ -1,0 +1,16 @@
+name: Java CI dash
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+        architecture: x64
+      
+        run: mvn clean test #mvn --batch-mode --update-snapshots package
